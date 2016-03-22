@@ -1,0 +1,20 @@
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    {{#foreach posts}}
+      <article class="{{post_class}}">
+        <header class="post-header">
+            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+        </header>
+      </article>
+    {{/foreach}}
+    <ul>
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+    </ul>
+    <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
